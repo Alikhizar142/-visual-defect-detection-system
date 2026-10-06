@@ -64,7 +64,7 @@ flowchart TD
     F --> G[Evaluation on held-out test set]
     G --> H[Metrics + Confusion Matrix + FP/FN JSON]
     F --> I[FastAPI Inference Service]
-    I --> J[/health + /predict + latency logs]
+    I --> J["/health + /predict + latency logs"]
 ```
 
 ## Installation
