@@ -1,0 +1,32 @@
+project:
+  seed: 42
+  output_dir: artifacts
+
+data:
+  raw_dir: data/raw
+  image_extensions: [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
+  test_size: 0.2
+  val_size: 0.2
+  min_images_per_class: 2
+  verify_corruption: true
+  check_duplicates: true
+
+training:
+  image_size: 224
+  batch_size: 16
+  num_workers: 0
+  epochs: 2
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  imbalance_ratio_threshold: 1.5
+  model_path: checkpoints/best_model.pt
+
+finetune:
+  enabled: true
+  epochs: 1
+  learning_rate: 0.0001
+
+api:
+  host: 0.0.0.0
+  port: 8000
+  max_file_size_mb: 5
